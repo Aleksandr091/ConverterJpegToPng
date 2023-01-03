@@ -22,10 +22,6 @@ class MainPresenter(
         viewState.checkPermission()
     }
 
-
-    fun loadImage() {
-        repository.pickImage()
-    }
     fun loadPath(uri: Uri) = repository.getPathFromUri(uri,contentResolver)
 
 
@@ -37,7 +33,7 @@ class MainPresenter(
             .subscribeByDefault()
             .subscribe(
                 {
-                    viewState.showToast("${it.first} converted to png.")
+                    viewState.showToast("${it.first} конвертация в png")
                     viewState.hideSnackBar()
                 },
                 {

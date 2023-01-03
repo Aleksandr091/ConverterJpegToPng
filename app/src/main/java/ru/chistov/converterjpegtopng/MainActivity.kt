@@ -19,14 +19,9 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
     private lateinit var binding: ActivityMainBinding
     private val presenter: MainPresenter by moxyPresenter {
-        MainPresenter(contentResolver,
-            PhotoRepositoryImpl(activityResultRegistry){imageUri ->
-
-                if (imageUri != null) {
-                    presenter.loadPath(imageUri)?.let { showImage(imageUri, it) }
-                }
-
-            }
+        MainPresenter(
+            contentResolver,
+            PhotoRepositoryImpl()
         )
     }
 
@@ -38,8 +33,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         setContentView(binding.root)
         binding.imagePicked.setOnClickListener {
             binding.imagePicked.background = null
-            //pickImage()
-            presenter.loadImage()
+            pickImage()
         }
 
 
@@ -122,8 +116,6 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         binding.textPathImagePicked.text = path
 
     }
-
-
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
