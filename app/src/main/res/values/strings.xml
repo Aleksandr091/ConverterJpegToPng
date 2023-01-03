@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ConverterJpegToPng</string>
+    <string name="gallery_image">Gallery Image</string>
+    <string name="all_photos">Всего фото:</string>
+    <string name="cancel">Отмена</string>
+    <string name="converting">Конвертация</string>
+</resources>
