@@ -33,7 +33,7 @@ class MainPresenter(
             .subscribeByDefault()
             .subscribe(
                 {
-                    viewState.showToast("${it.first} конвертация в png")
+                    viewState.showToast("${it.first} сконвертирован в png")
                     viewState.hideSnackBar()
                 },
                 {
